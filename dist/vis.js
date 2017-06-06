@@ -14836,7 +14836,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   var POINTER_INPUT_MAP = {
       pointerdown: INPUT_START,
-      pointermove: INPUT_MOVE,
+      // pointermove: INPUT_MOVE,
       pointerup: INPUT_END,
       pointercancel: INPUT_CANCEL,
       pointerout: INPUT_CANCEL
@@ -14851,12 +14851,14 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   var POINTER_ELEMENT_EVENTS = 'pointerdown';
-  var POINTER_WINDOW_EVENTS = 'pointermove pointerup pointercancel';
+  // var POINTER_WINDOW_EVENTS = 'pointermove pointerup pointercancel';
+  var POINTER_WINDOW_EVENTS = 'pointerup pointercancel';
 
   // IE10 has prefixed support, and case-sensitive
   if (window.MSPointerEvent && !window.PointerEvent) {
       POINTER_ELEMENT_EVENTS = 'MSPointerDown';
-      POINTER_WINDOW_EVENTS = 'MSPointerMove MSPointerUp MSPointerCancel';
+      // POINTER_WINDOW_EVENTS = 'MSPointerMove MSPointerUp MSPointerCancel';
+      POINTER_WINDOW_EVENTS = 'MSPointerUp MSPointerCancel';
   }
 
   /**
