@@ -1870,7 +1870,7 @@ return /******/ (function(modules) { // webpackBootstrap
   $export.B = 16;  // bind
   $export.W = 32;  // wrap
   $export.U = 64;  // safe
-  $export.R = 128; // real proto method for `library` 
+  $export.R = 128; // real proto method for `library`
   module.exports = $export;
 
 /***/ }),
@@ -2996,7 +2996,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 79 */
 /***/ (function(module, exports) {
 
-  
+
 
 /***/ }),
 /* 80 */
@@ -9630,8 +9630,8 @@ return /******/ (function(modules) { // webpackBootstrap
     verticalRatio: 0.5, // 0.1 to 1.0, where 1.0 results in a 'cube'
 
     dotSizeRatio: 0.02, // size of the dots as a fraction of the graph width
-    dotSizeMinFraction: 0.5, // size of min-value dot as a fraction of dotSizeRatio	
-    dotSizeMaxFraction: 2.5, // size of max-value dot as a fraction of dotSizeRatio	
+    dotSizeMinFraction: 0.5, // size of min-value dot as a fraction of dotSizeRatio
+    dotSizeMaxFraction: 2.5, // size of max-value dot as a fraction of dotSizeRatio
 
     showAnimationControls: autoByDefault,
     animationInterval: 1000, // milliseconds
@@ -10299,7 +10299,7 @@ return /******/ (function(modules) { // webpackBootstrap
     util.addEventListener(this.frame.canvas, 'mousedown', onmousedown);
     util.addEventListener(this.frame.canvas, 'touchstart', ontouchstart);
     util.addEventListener(this.frame.canvas, 'mousewheel', onmousewheel);
-    util.addEventListener(this.frame.canvas, 'mousemove', ontooltip);
+    // util.addEventListener(this.frame.canvas, 'mousemove', ontooltip);
     util.addEventListener(this.frame.canvas, 'click', onclick);
 
     // add the new graph to the container element
@@ -11488,13 +11488,13 @@ return /******/ (function(modules) { // webpackBootstrap
     // we store the function onmousemove and onmouseup in the graph, so we can
     // remove the eventlisteners lateron in the function mouseUp()
     var me = this;
-    this.onmousemove = function (event) {
-      me._onMouseMove(event);
-    };
+    // this.onmousemove = function (event) {
+    //   me._onMouseMove(event);
+    // };
     this.onmouseup = function (event) {
       me._onMouseUp(event);
     };
-    util.addEventListener(document, 'mousemove', me.onmousemove);
+    // util.addEventListener(document, 'mousemove', me.onmousemove);
     util.addEventListener(document, 'mouseup', me.onmouseup);
     util.preventDefault(event);
   };
@@ -11568,7 +11568,7 @@ return /******/ (function(modules) { // webpackBootstrap
     this.leftButtonDown = false;
 
     // remove event listeners here
-    util.removeEventListener(document, 'mousemove', this.onmousemove);
+    // util.removeEventListener(document, 'mousemove', this.onmousemove);
     util.removeEventListener(document, 'mouseup', this.onmouseup);
     util.preventDefault(event);
   };
@@ -11664,7 +11664,7 @@ return /******/ (function(modules) { // webpackBootstrap
    * Event handler for touchmove event on mobile devices
    */
   Graph3d.prototype._onTouchMove = function (event) {
-    this._onMouseMove(event);
+    // this._onMouseMove(event);
   };
 
   /**
@@ -12024,7 +12024,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 99 */
 /***/ (function(module, exports) {
 
-  
+
   /**
    * Expose `Emitter`.
    */
@@ -13019,13 +13019,13 @@ return /******/ (function(modules) { // webpackBootstrap
     // we store the function onmousemove and onmouseup in the graph, so we can
     // remove the eventlisteners lateron in the function mouseUp()
     var me = this;
-    this.onmousemove = function (event) {
-      me._onMouseMove(event);
-    };
+    // this.onmousemove = function (event) {
+    //   me._onMouseMove(event);
+    // };
     this.onmouseup = function (event) {
       me._onMouseUp(event);
     };
-    util.addEventListener(document, 'mousemove', this.onmousemove);
+    // util.addEventListener(document, 'mousemove', this.onmousemove);
     util.addEventListener(document, 'mouseup', this.onmouseup);
     util.preventDefault(event);
   };
@@ -13065,7 +13065,7 @@ return /******/ (function(modules) { // webpackBootstrap
     this.frame.style.cursor = 'auto';
 
     // remove event listeners
-    util.removeEventListener(document, 'mousemove', this.onmousemove);
+    // util.removeEventListener(document, 'mousemove', this.onmousemove);
     util.removeEventListener(document, 'mouseup', this.onmouseup);
 
     util.preventDefault();
@@ -13408,7 +13408,7 @@ return /******/ (function(modules) { // webpackBootstrap
   /**
    * Field names in the options hash which are of relevance to the user.
    *
-   * Same as OPTIONKEYS, but internally these fields are stored with 
+   * Same as OPTIONKEYS, but internally these fields are stored with
    * prefix 'default' in the name.
    */
   var PREFIXEDOPTIONKEYS = ['xBarWidth', 'yBarWidth', 'valueMin', 'valueMax', 'xMin', 'xMax', 'xStep', 'yMin', 'yMax', 'yStep', 'zMin', 'zMax', 'zStep'];
@@ -13457,11 +13457,11 @@ return /******/ (function(modules) { // webpackBootstrap
    * Forcibly copy fields from src to dst in a controlled manner.
    *
    * A given field in dst will always be overwitten. If this field
-   * is undefined or not present in src, the field in dst will 
+   * is undefined or not present in src, the field in dst will
    * be explicitly set to undefined.
-   * 
+   *
    * The intention here is to be able to reset all option fields.
-   * 
+   *
    * Only the fields mentioned in array 'fields' will be handled.
    *
    * @param fields array with names of fields to copy
@@ -13505,8 +13505,8 @@ return /******/ (function(modules) { // webpackBootstrap
   /**
    * Initialize dst with the values in src.
    *
-   * src is the hash with the default values. 
-   * A reference DEFAULTS to this hash is stored locally for 
+   * src is the hash with the default values.
+   * A reference DEFAULTS to this hash is stored locally for
    * further handling.
    *
    * For now, dst is assumed to be a Graph3d instance.
@@ -14778,12 +14778,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
   var MOUSE_INPUT_MAP = {
       mousedown: INPUT_START,
-      mousemove: INPUT_MOVE,
+      // mousemove: INPUT_MOVE,
       mouseup: INPUT_END
   };
 
   var MOUSE_ELEMENT_EVENTS = 'mousedown';
-  var MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+  // var MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
 
   /**
    * Mouse events input
@@ -17050,16 +17050,16 @@ return /******/ (function(modules) { // webpackBootstrap
       this.dom.root.onpointerdown = function (event) {
         me.emit('mouseDown', me.getEventProperties(event));
       };
-      this.dom.root.onpointermove = function (event) {
-        me.emit('mouseMove', me.getEventProperties(event));
-      };
+      // this.dom.root.onpointermove = function (event) {
+      //   me.emit('mouseMove', me.getEventProperties(event));
+      // };
       this.dom.root.onpointerup = function (event) {
         me.emit('mouseUp', me.getEventProperties(event));
       };
     } else {
-      this.dom.root.onmousemove = function (event) {
-        me.emit('mouseMove', me.getEventProperties(event));
-      };
+      // this.dom.root.onmousemove = function (event) {
+      //   me.emit('mouseMove', me.getEventProperties(event));
+      // };
       this.dom.root.onmousedown = function (event) {
         me.emit('mouseDown', me.getEventProperties(event));
       };
@@ -17717,7 +17717,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    function is 'easeInOutQuad'.
    *                              {Boolean} [byUser=false]
    *                              {Event}  event  Mouse event
-   *                              {Function} a callback funtion to be executed at the end of this function 
+   *                              {Function} a callback funtion to be executed at the end of this function
    *
    */
 
@@ -18558,7 +18558,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   /**
    * used in Core to convert the options into a volatile variable
-   * 
+   *
    * @param {function} moment
    * @param {Object} body
    * @param {Array | Object} hiddenDates
@@ -19322,7 +19322,7 @@ return /******/ (function(modules) { // webpackBootstrap
       if (event.stopPropagation) {
         event.stopPropagation();
       }
-      // return when dropping non-vis items 
+      // return when dropping non-vis items
       try {
         var itemData = JSON.parse(event.dataTransfer.getData("text"));
         if (!itemData.content) return;
@@ -19680,7 +19680,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    provided to specify duration and easing function.
    *                                    Default duration is 500 ms, and default easing
    *                                    function is 'easeInOutQuad'.
-   * @param {Function} a callback funtion to be executed at the end of this function 
+   * @param {Function} a callback funtion to be executed at the end of this function
    */
   Core.prototype.fit = function (options, callback) {
     var range = this.getDataRange();
@@ -19728,7 +19728,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    provided to specify duration and easing function.
    *                                    Default duration is 500 ms, and default easing
    *                                    function is 'easeInOutQuad'.
-   * @param {Function} a callback funtion to be executed at the end of this function 
+   * @param {Function} a callback funtion to be executed at the end of this function
    */
   Core.prototype.setWindow = function (start, end, options, callback) {
     if (typeof arguments[2] == "function") {
@@ -19761,7 +19761,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    provided to specify duration and easing function.
    *                                    Default duration is 500 ms, and default easing
    *                                    function is 'easeInOutQuad'.
-   * @param {Function} a callback funtion to be executed at the end of this function 
+   * @param {Function} a callback funtion to be executed at the end of this function
    */
   Core.prototype.moveTo = function (time, options, callback) {
     if (typeof arguments[1] == "function") {
@@ -19800,7 +19800,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    provided to specify duration and easing function.
    *                                    Default duration is 500 ms, and default easing
    *                                    function is 'easeInOutQuad'.
-   * @param {Function} a callback funtion to be executed at the end of this function 
+   * @param {Function} a callback funtion to be executed at the end of this function
    */
   Core.prototype.zoomIn = function (percentage, options, callback) {
     if (!percentage || percentage < 0 || percentage > 1) return;
@@ -19830,7 +19830,7 @@ return /******/ (function(modules) { // webpackBootstrap
    *                                    provided to specify duration and easing function.
    *                                    Default duration is 500 ms, and default easing
    *                                    function is 'easeInOutQuad'.
-   * @param {Function} a callback funtion to be executed at the end of this function 
+   * @param {Function} a callback funtion to be executed at the end of this function
    */
   Core.prototype.zoomOut = function (percentage, options, callback) {
     if (!percentage || percentage < 0 || percentage > 1) return;
@@ -20609,8 +20609,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
     this.body.dom.centerContainer.addEventListener('mouseover', this._onMouseOver.bind(this));
     this.body.dom.centerContainer.addEventListener('mouseout', this._onMouseOut.bind(this));
-    this.body.dom.centerContainer.addEventListener('mousemove', this._onMouseMove.bind(this));
-    // right-click on timeline 
+    // this.body.dom.centerContainer.addEventListener('mousemove', this._onMouseMove.bind(this));
+    // right-click on timeline
     this.body.dom.centerContainer.addEventListener('contextmenu', this._onDragEnd.bind(this));
 
     this.body.dom.centerContainer.addEventListener('mousewheel', this._onMouseWheel.bind(this));
@@ -21273,7 +21273,7 @@ return /******/ (function(modules) { // webpackBootstrap
       var selected;
 
       if (item) {
-        // update item   	
+        // update item
         if (!constructor || !(item instanceof constructor)) {
           // item type has changed, delete the item and recreate it
           selected = item.selected; // preserve selection of this item
@@ -22056,7 +22056,7 @@ return /******/ (function(modules) { // webpackBootstrap
                 orgOffset = 1;
                 continue;
               }
-              // found a group (apart from dragged group) that has the wrong position -> switch with the 
+              // found a group (apart from dragged group) that has the wrong position -> switch with the
               // group at the position where other one should be, fix index arrays and continue
               else {
                   var slippedPosition = newOrder.indexOf(origOrder[curPos + orgOffset]);
@@ -22115,7 +22115,7 @@ return /******/ (function(modules) { // webpackBootstrap
                 break;
               }
 
-              // found a group that has the wrong position -> switch with the 
+              // found a group that has the wrong position -> switch with the
               // group at the position where other one should be, fix index arrays and continue
               var slippedPosition = newOrder.indexOf(origOrder[curPos]);
               var switchGroup = dataset.get(newOrder[curPos]);
@@ -23614,7 +23614,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
     var restack = forceRestack || this.stackDirty || this.isVisible && !lastIsVisible;
 
-    // if restacking, reposition visible items vertically 
+    // if restacking, reposition visible items vertically
     if (restack) {
       if (typeof this.itemSet.options.order === 'function') {
         // a custom order function
@@ -24914,7 +24914,7 @@ return /******/ (function(modules) { // webpackBootstrap
       var tooltipOffset = 50; // TODO: should be tooltip height (depends on template)
       var scrollTop = this.parent.itemSet.body.domProps.scrollTop;
 
-      // TODO: this.top for orientation:true is actually the items distance from the bottom... 
+      // TODO: this.top for orientation:true is actually the items distance from the bottom...
       // (should be this.bottom)
       var itemDistanceFromTop;
       if (this.options.orientation.item == 'top') {
@@ -33095,7 +33095,7 @@ return /******/ (function(modules) { // webpackBootstrap
         onDragEnd: function onDragEnd() {},
         onMouseWheel: function onMouseWheel() {},
         onPinch: function onPinch() {},
-        onMouseMove: function onMouseMove() {},
+        // onMouseMove: function onMouseMove() {},
         onRelease: function onRelease() {},
         onContext: function onContext() {}
       },
@@ -35098,7 +35098,7 @@ return /******/ (function(modules) { // webpackBootstrap
           value: function load(url, brokenUrl, id) {
               var _this = this;
 
-              //Try and get the image from the cache, if successful then return the cached image   
+              //Try and get the image from the cache, if successful then return the cached image
               var cachedImage = this.images[url];
               if (cachedImage) return cachedImage;
 
@@ -35109,7 +35109,7 @@ return /******/ (function(modules) { // webpackBootstrap
               // Also, there will be multiple loads of the same image.
               this.images[url] = img;
 
-              //Subscribe to the event that is raised if the image loads successfully 
+              //Subscribe to the event that is raised if the image loads successfully
               img.image.onload = function () {
                   // Properly init the cached item and then request a redraw
                   _this._fixImageCoordinates(img.image);
@@ -38360,7 +38360,7 @@ return /******/ (function(modules) { // webpackBootstrap
        * Set the images for this node.
        *
        * The images can be updated after the initial setting of options;
-       * therefore, this method needs to be reentrant. 
+       * therefore, this method needs to be reentrant.
        *
        * For correct working in error cases, it is necessary to properly set
        * field 'nodes.brokenImage' in the options.
@@ -46325,9 +46325,9 @@ return /******/ (function(modules) { // webpackBootstrap
           _this3.body.eventListeners.onMouseWheel(event);
         });
 
-        this.frame.canvas.addEventListener('mousemove', function (event) {
-          _this3.body.eventListeners.onMouseMove(event);
-        });
+        // this.frame.canvas.addEventListener('mousemove', function (event) {
+        //   _this3.body.eventListeners.onMouseMove(event);
+        // });
         this.frame.canvas.addEventListener('contextmenu', function (event) {
           _this3.body.eventListeners.onContext(event);
         });
@@ -46916,7 +46916,7 @@ return /******/ (function(modules) { // webpackBootstrap
       this.body.eventListeners.onDragEnd = this.onDragEnd.bind(this);
       this.body.eventListeners.onMouseWheel = this.onMouseWheel.bind(this);
       this.body.eventListeners.onPinch = this.onPinch.bind(this);
-      this.body.eventListeners.onMouseMove = this.onMouseMove.bind(this);
+      // this.body.eventListeners.onMouseMove = this.onMouseMove.bind(this);
       this.body.eventListeners.onRelease = this.onRelease.bind(this);
       this.body.eventListeners.onContext = this.onContext.bind(this);
 
@@ -47462,69 +47462,71 @@ return /******/ (function(modules) { // webpackBootstrap
        * @private
        */
 
-    }, {
-      key: 'onMouseMove',
-      value: function onMouseMove(event) {
-        var _this3 = this;
-
-        var pointer = this.getPointer({ x: event.clientX, y: event.clientY });
-        var popupVisible = false;
-
-        // check if the previously selected node is still selected
-        if (this.popup !== undefined) {
-          if (this.popup.hidden === false) {
-            this._checkHidePopup(pointer);
-          }
-
-          // if the popup was not hidden above
-          if (this.popup.hidden === false) {
-            popupVisible = true;
-            this.popup.setPosition(pointer.x + 3, pointer.y - 5);
-            this.popup.show();
-          }
-        }
-
-        // if we bind the keyboard to the div, we have to highlight it to use it. This highlights it on mouse over.
-        if (this.options.keyboard.bindToWindow === false && this.options.keyboard.enabled === true) {
-          this.canvas.frame.focus();
-        }
-
-        // start a timeout that will check if the mouse is positioned above an element
-        if (popupVisible === false) {
-          if (this.popupTimer !== undefined) {
-            clearInterval(this.popupTimer); // stop any running calculationTimer
-            this.popupTimer = undefined;
-          }
-          if (!this.drag.dragging) {
-            this.popupTimer = setTimeout(function () {
-              return _this3._checkShowPopup(pointer);
-            }, this.options.tooltipDelay);
-          }
-        }
-
-        /**
-        * Adding hover highlights
-        */
-        if (this.options.hover === true) {
-          // adding hover highlights
-          var obj = this.selectionHandler.getNodeAt(pointer);
-          if (obj === undefined) {
-            obj = this.selectionHandler.getEdgeAt(pointer);
-          }
-          this.selectionHandler.hoverObject(obj);
-        }
-      }
-
-      /**
-       * Check if there is an element on the given position in the network
-       * (a node or edge). If so, and if this element has a title,
-       * show a popup window with its title.
-       *
-       * @param {{x:Number, y:Number}} pointer
-       * @private
-       */
-
-    }, {
+    },
+    // {
+    //   key: 'onMouseMove',
+    //   value: function onMouseMove(event) {
+    //     var _this3 = this;
+    //
+    //     var pointer = this.getPointer({ x: event.clientX, y: event.clientY });
+    //     var popupVisible = false;
+    //
+    //     // check if the previously selected node is still selected
+    //     if (this.popup !== undefined) {
+    //       if (this.popup.hidden === false) {
+    //         this._checkHidePopup(pointer);
+    //       }
+    //
+    //       // if the popup was not hidden above
+    //       if (this.popup.hidden === false) {
+    //         popupVisible = true;
+    //         this.popup.setPosition(pointer.x + 3, pointer.y - 5);
+    //         this.popup.show();
+    //       }
+    //     }
+    //
+    //     // if we bind the keyboard to the div, we have to highlight it to use it. This highlights it on mouse over.
+    //     if (this.options.keyboard.bindToWindow === false && this.options.keyboard.enabled === true) {
+    //       this.canvas.frame.focus();
+    //     }
+    //
+    //     // start a timeout that will check if the mouse is positioned above an element
+    //     if (popupVisible === false) {
+    //       if (this.popupTimer !== undefined) {
+    //         clearInterval(this.popupTimer); // stop any running calculationTimer
+    //         this.popupTimer = undefined;
+    //       }
+    //       if (!this.drag.dragging) {
+    //         this.popupTimer = setTimeout(function () {
+    //           return _this3._checkShowPopup(pointer);
+    //         }, this.options.tooltipDelay);
+    //       }
+    //     }
+    //
+    //     /**
+    //     * Adding hover highlights
+    //     */
+    //     if (this.options.hover === true) {
+    //       // adding hover highlights
+    //       var obj = this.selectionHandler.getNodeAt(pointer);
+    //       if (obj === undefined) {
+    //         obj = this.selectionHandler.getEdgeAt(pointer);
+    //       }
+    //       this.selectionHandler.hoverObject(obj);
+    //     }
+    //   }
+    //
+    //   /**
+    //    * Check if there is an element on the given position in the network
+    //    * (a node or edge). If so, and if this element has a title,
+    //    * show a popup window with its title.
+    //    *
+    //    * @param {{x:Number, y:Number}} pointer
+    //    * @private
+    //    */
+    //
+    // },
+    {
       key: '_checkShowPopup',
       value: function _checkShowPopup(pointer) {
         var x = this.canvas._XconvertDOMtoCanvas(pointer.x);
@@ -50914,7 +50916,7 @@ return /******/ (function(modules) { // webpackBootstrap
           this._temporaryBindUI('onDragStart', this._controlNodeDragStart.bind(this)); // used to select control node
           this._temporaryBindUI('onDrag', this._controlNodeDrag.bind(this)); // used to drag control node
           this._temporaryBindUI('onDragEnd', this._controlNodeDragEnd.bind(this)); // used to connect or revert control nodes
-          this._temporaryBindUI('onMouseMove', function () {}); // disabled
+          // this._temporaryBindUI('onMouseMove', function () {}); // disabled
 
           // create function to position control nodes correctly on movement
           // automatically cleaned up because we use the temporary bind
