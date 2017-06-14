@@ -14434,6 +14434,11 @@ return /******/ (function(modules) { // webpackBootstrap
           }
       };
 
+      // Dan Sterrett 6/14/17 - Storing the event handlers so we can remove them later. This is necessary because
+      //   calling timeline.destroy() does not remove all the listeners for some reason.
+      window['visEventHandlers'] = window['visEventHandlers'] || [];
+      window['visEventHandlers'].push(this.domHandler);
+
       this.init();
 
   }
