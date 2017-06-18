@@ -22748,6 +22748,7 @@ return /******/ (function(modules) { // webpackBootstrap
         this.current.month(0);
       case 'month':
         this.current.date(1);
+        break; // Dan Sterrett - Adding a break here to fix a bug where at certain zoom levels the month labels become off by 1.
       case 'week':
         this.current.weekday(0);
       case 'day': // intentional fall through
