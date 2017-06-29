@@ -14788,7 +14788,7 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   var MOUSE_ELEMENT_EVENTS = 'mousedown';
-  // var MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+  var MOUSE_WINDOW_EVENTS = undefined; // 'mousemove mouseup';
 
   /**
    * Mouse events input
